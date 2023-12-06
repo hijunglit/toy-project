@@ -1,7 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import { Reset } from 'styled-reset';
-import App from './App';
+import Root from './routes/root';
+import Charactor from './routes/Charactor';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+  },
+  {
+    path: "charactor/:id",
+    element: <Charactor />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -9,6 +25,6 @@ root.render(
     // </React.StrictMode>
     <>
       <Reset />
-      <App />
+      <RouterProvider router={router}/>
     </>
 );
