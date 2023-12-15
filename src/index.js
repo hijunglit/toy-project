@@ -5,18 +5,22 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Reset } from 'styled-reset';
-import Root from './routes/root';
+import App from './routes/App';
 import Charactor from './routes/Charactor';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App />,
   },
   {
-    path: "charactor/:id",
+    path: "/charactor/:id",
     element: <Charactor />,
   },
+  {
+    path:"/:id",
+    element: <App />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,7 +29,7 @@ root.render(
     // </React.StrictMode>
     <>
       <Reset />
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </>
 );
 
