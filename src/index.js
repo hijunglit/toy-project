@@ -7,6 +7,7 @@ import {
 import { Reset } from 'styled-reset';
 import App from './routes/App';
 import Charactor from './routes/Charactor';
+import Detail from './detail';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/charactor/:id",
-    element: <Charactor />,
+    element: <Detail />,
   },
   {
     path:"/:id",
